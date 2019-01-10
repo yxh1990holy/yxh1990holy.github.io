@@ -15,17 +15,17 @@
 <meta property="og:site_name" content="SmartSmile">
 <meta property="og:description" content="Jmeter配置jmeter插件下载地址：https://jmeter-plugins.org/install/Install/，下载并放到lib/ext目录下 Jmeter生成测试报告​    在使用jmeter进行压力测试，有两种方式：GUI、非GUI。不管是GUI，还是非GUI进行测试，对测试结果都可以转化成HTML的测试报告，更直观和方便我们查看和分析。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="c:/Users/DELL3450-I5/AppData/Roaming/Typora/typora-user-images/1545637076866.png">
-<meta property="og:image" content="c:/Users/DELL3450-I5/AppData/Roaming/Typora/typora-user-images/1545962017616.png">
-<meta property="og:image" content="c:/Users/DELL3450-I5/AppData/Roaming/Typora/typora-user-images/1545976738366.png">
-<meta property="og:image" content="c:/Users/DELL3450-I5/AppData/Roaming/Typora/typora-user-images/1545976066068.png">
-<meta property="og:image" content="e:/工作目录/积分商城/积分商城测试报告/report/提交报告/聚合报告.png">
-<meta property="og:image" content="e:/工作目录/积分商城/积分商城测试报告/report/提交报告/图形结果.png">
-<meta property="og:updated_time" content="2019-01-02T01:14:57.401Z">
+<meta property="og:image" content="http://yoursite.com/2019/01/01/jmeter笔记/1545637076866.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/01/jmeter笔记/1545962017616.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/01/jmeter笔记/1545976738366.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/01/jmeter笔记/1545976066068.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/01/jmeter笔记/聚合报告.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/01/jmeter笔记/图形结果.png">
+<meta property="og:updated_time" content="2019-01-10T01:29:10.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jmeter笔记">
 <meta name="twitter:description" content="Jmeter配置jmeter插件下载地址：https://jmeter-plugins.org/install/Install/，下载并放到lib/ext目录下 Jmeter生成测试报告​    在使用jmeter进行压力测试，有两种方式：GUI、非GUI。不管是GUI，还是非GUI进行测试，对测试结果都可以转化成HTML的测试报告，更直观和方便我们查看和分析。">
-<meta name="twitter:image" content="c:/Users/DELL3450-I5/AppData/Roaming/Typora/typora-user-images/1545637076866.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/01/jmeter笔记/1545637076866.png">
   
     <link rel="alternate" href="/atom.xml" title="SmartSmile" type="application/atom+xml">
   
@@ -101,7 +101,7 @@
 <ol>
 <li><p>在测试计划里面添加一个Listener(添加任意一个Listener都可以)，在Write result to file/Read from file的FileName的位置填写保存测试结果的路径（路径可以自由指定）（如图所示）</p>
 <p>【Jmeter中测试结果的文件格式为：jtl】</p>
-<p><img src="C:\Users\DELL3450-I5\AppData\Roaming\Typora\typora-user-images\1545637076866.png" alt="1545637076866"> </p>
+<p><img src="/2019/01/01/jmeter笔记/1545637076866.png" alt="1545637076866"> </p>
 </li>
 <li><p>通过命令把测试结果转换成HTML</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jmeter -g D:\testcase_by_tools\resultReport\积分商城测试报告.jtl -e -o D:\testcase_by_tools\report</span><br></pre></td></tr></table></figure>
@@ -130,7 +130,7 @@
 <li>o：用于存放测试报告的路径；</li>
 </ul>
 <h2 id="处理器"><a href="#处理器" class="headerlink" title="处理器"></a>处理器</h2><h3 id="正则表达式处理器"><a href="#正则表达式处理器" class="headerlink" title="正则表达式处理器"></a>正则表达式处理器</h3><p>注：前置处理器和后置处理器都包括正则表达式处理器，用法基本相同</p>
-<p><img src="C:\Users\DELL3450-I5\AppData\Roaming\Typora\typora-user-images\1545962017616.png" alt="1545962017616"></p>
+<p><img src="/2019/01/01/jmeter笔记/1545962017616.png" alt="1545962017616"></p>
 <p>各参数值的含义：</p>
 <table>
 <thead>
@@ -151,8 +151,8 @@
 </tbody>
 </table>
 <p>| 模板       | 表示使用提取到的第几个值：<br>$1$:表示取第1个<br>$2$:表示取第二个<br>以此类推，$n$:表示取第n个 |<br>| 匹配数字   | 0代表随机值，1代表全部取值                                   |<br>| 缺省值     | 如果正则表达式没有搜找到值，则使用此缺省值                   |</p>
-<h3 id="BeanShell-Processor"><a href="#BeanShell-Processor" class="headerlink" title="BeanShell Processor"></a>BeanShell Processor</h3><p><img src="C:\Users\DELL3450-I5\AppData\Roaming\Typora\typora-user-images\1545976738366.png" alt="1545976738366"></p>
-<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><h3 id="Synchronizing-Timer"><a href="#Synchronizing-Timer" class="headerlink" title="Synchronizing Timer"></a>Synchronizing Timer</h3><p><img src="C:\Users\DELL3450-I5\AppData\Roaming\Typora\typora-user-images\1545976066068.png" alt="1545976066068"></p>
+<h3 id="BeanShell-Processor"><a href="#BeanShell-Processor" class="headerlink" title="BeanShell Processor"></a>BeanShell Processor</h3><p><img src="/2019/01/01/jmeter笔记/1545976738366.png" alt="1545976738366"></p>
+<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><h3 id="Synchronizing-Timer"><a href="#Synchronizing-Timer" class="headerlink" title="Synchronizing Timer"></a>Synchronizing Timer</h3><p><img src="/2019/01/01/jmeter笔记/1545976066068.png" alt="1545976066068"></p>
 <p>它的其作用是：让各个线程到达集合点后等待，等集齐指定的线程数后，再同时释放以便产生并发。若在指定的超时时间内为等齐，那么不在等待，释放等待中的线程，这种方法可以瞬间产生较大的压力。</p>
 <ul>
 <li>Number of Simulated Users to Group by（集合线程数): 要等到多少线程再同时释放。若设置为0，则表示要等待所有线程（Number of Threads（users））到达；</li>
@@ -164,7 +164,7 @@
 <li>集合点放到线程组下，将作用于线程组下的所有请求</li>
 <li>集合点放到具体请求下，将只作用于该请求</li>
 </ol>
-<h2 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h2><h3 id="聚合报告解读"><a href="#聚合报告解读" class="headerlink" title="聚合报告解读"></a>聚合报告解读</h3><p><img src="E:\工作目录\积分商城\积分商城测试报告\report\提交报告\聚合报告.png" alt="聚合报告"></p>
+<h2 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h2><h3 id="聚合报告解读"><a href="#聚合报告解读" class="headerlink" title="聚合报告解读"></a>聚合报告解读</h3><p><img src="/2019/01/01/jmeter笔记/聚合报告.png" alt="聚合报告"></p>
 <p>Aggregate Report 是 JMeter 常用的一个 Listener，中文被翻译为“聚合报告”。</p>
 <p>如果大家都是做Web应用的性能测试，例如只有一个登录的请求，那么在Aggregate Report中，会显示一行数据，共有10个字段，含义分别如下。</p>
 <ul>
@@ -189,7 +189,7 @@
 <li><p>KB/Sec：每秒从服务器端接收到的数据量，相当于LoadRunner中的Throughput/Sec  </p>
 </li>
 </ul>
-<h3 id="图形报告解读"><a href="#图形报告解读" class="headerlink" title="图形报告解读"></a>图形报告解读</h3><p><img src="E:\工作目录\积分商城\积分商城测试报告\report\提交报告\图形结果.png" alt="图形结果"></p>
+<h3 id="图形报告解读"><a href="#图形报告解读" class="headerlink" title="图形报告解读"></a>图形报告解读</h3><p><img src="/2019/01/01/jmeter笔记/图形结果.png" alt="图形结果"></p>
 <ul>
 <li>样本数目：总共发送到服务器的请求数</li>
 <li>最新样本：代表时间的数字，是服务器响应最后一个请求的时间</li>
@@ -202,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/01/jmeter笔记/" data-id="cjqdt4zst000274v0dvo1vj56" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/01/jmeter笔记/" data-id="cjqpxrhje0001qkv0qn06glak" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jmeter/">jmeter</a></li></ul>
