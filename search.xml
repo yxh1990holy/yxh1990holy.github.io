@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[BootStrap学习笔记]]></title>
+    <url>%2F2019%2F01%2F02%2FBootstrap%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[BootStrap学习笔记]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[jmeter笔记]]></title>
+    <url>%2F2019%2F01%2F01%2Fjmeter%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Jmeter配置jmeter插件下载地址：https://jmeter-plugins.org/install/Install/，下载并放到lib/ext目录下 Jmeter生成测试报告​ 在使用jmeter进行压力测试，有两种方式：GUI、非GUI。不管是GUI，还是非GUI进行测试，对测试结果都可以转化成HTML的测试报告，更直观和方便我们查看和分析。 方式一：GUI 在测试计划里面添加一个Listener(添加任意一个Listener都可以)，在Write result to file/Read from file的FileName的位置填写保存测试结果的路径（路径可以自由指定）（如图所示） 【Jmeter中测试结果的文件格式为：jtl】 通过命令把测试结果转换成HTML 1jmeter -g D:\testcase_by_tools\resultReport\积分商城测试报告.jtl -e -o D:\testcase_by_tools\report 参数说明： -g –指定已存在的测试结果 -o –指定的文件夹必须是不存在的，否则执行失败（如图所示） 注意： 该命令必须在jmeter的bin目录下执行 D:\testcase_by_tools\resultReport\积分商城测试报告.jtl –是积分商城测试报告.jtl所在目录【若积分商城测试报告.jtl保存再bin目录下，路径可以省略，直接写测试结果的名称即可；若result.jtl不是在bin目录下，就要填写完成的路径 D:\testcase_by_tools\report –是转换后HTML报告保存的路径，且生成前无此路径 方式二：非GUI md 先要cd到jmeter的bin目录，然后输入以下命令： jmeter -n -t C:\Users\Anthony\Desktop\jmeter\HttpReport.jmx -l C:\Users\Anthony\Desktop\html.csv -e -o C:\Users\Anthony\Desktop\HttpReports 参数说明: n：非GUI模式执行JMeter； t： 脚本文件(.jmx文件)的路径； l： 指定生成测试结果的保存文件(.jtl格式)，此文件必须不存在； e：测试结束后，生成测试报告； o：用于存放测试报告的路径； 处理器正则表达式处理器注：前置处理器和后置处理器都包括正则表达式处理器，用法基本相同 各参数值的含义： 参数 释义 引用名称 在HTTP请求中，引用此数据，需要引用到的名称。（即参数名） 正则表达式 用于将需要的数据提取出来 模板 表示使用提取到的第几个值：$1$:表示取第1个$2$:表示取第二个以此类推$n$:表示取第n个 匹配数字 0代表随机值，1代表全部取值 缺省值 如果正则表达式没有搜找到值，则使用此缺省值 BeanShell Processor 定时器Synchronizing Timer 它的其作用是：让各个线程到达集合点后等待，等集齐指定的线程数后，再同时释放以便产生并发。若在指定的超时时间内为等齐，那么不在等待，释放等待中的线程，这种方法可以瞬间产生较大的压力。 Number of Simulated Users to Group by（集合线程数): 要等到多少线程再同时释放。若设置为0，则表示要等待所有线程（Number of Threads（users））到达； Timeout in milliseconds: 超时时间，即最长等待多少毫秒去等待集齐指定的线程。单位毫秒，默认为0；若设置为0，定时器将会无限等待直到线程数达到集合线程数(“Number of Simultaneous Users toGroup”)才释放。若该超时时间是一个大于0的数值，那么系统会等待线程个数达到集合线程数，到达后即可释放。若超时时间已经到达，但指定的集合线程数还没达到，定时器将不再等待，释放已到达的线程。 注： 把SynchronizingTimer放置于请求之前，通常Jmeter按树状结构顺序执行 集合点放到线程组下，将作用于线程组下的所有请求 集合点放到具体请求下，将只作用于该请求 监听器聚合报告解读 Aggregate Report 是 JMeter 常用的一个 Listener，中文被翻译为“聚合报告”。 如果大家都是做Web应用的性能测试，例如只有一个登录的请求，那么在Aggregate Report中，会显示一行数据，共有10个字段，含义分别如下。 Label：每个 JMeter 的 element（例如 HTTP Request）都有一个 Name 属性，这里显示的就是 Name 属性的值 #Samples：表示你这次测试中一共发出了多少个请求，如果模拟10个用户，每个用户迭代10次，那么这里显示100 Average：平均响应时间—-默认情况下是单个 Request 的平均响应时间，当使用了 Transaction Controller 时，也可以以Transaction 为单位显示平均响应时间 Median：中位数，也就是 50％ 用户的响应时间小于这个中位数 90% Line：90％ 用户的响应时间 Note：关于 90%、95％和99%并发用户数的含义，请参考下文http://www.cnblogs.com/jackei/archive/2006/11/11/557972.html Min：最小响应时间 Max：最大响应时间 Error%：本次测试中出现错误的请求的数量/请求的总数 Throughput：吞吐量—默认情况下表示每秒完成的请求数（Request per Second），当使用了 Transaction Controller 时，也可以表示类似 LoadRunner 的 Transaction per Second 数 KB/Sec：每秒从服务器端接收到的数据量，相当于LoadRunner中的Throughput/Sec 图形报告解读 样本数目：总共发送到服务器的请求数 最新样本：代表时间的数字，是服务器响应最后一个请求的时间 平均：总运行时间除以发送到服务器的请求数 偏离：服务器响应时间变化、离散程度测量值的大小，或者，换句话说，就是数据的分布 吞吐量：服务器每分钟处理的请求数。 中值：代表时间的数字，有一半的服务器响应时间低于该值而另一半高于该值 察看结果树]]></content>
+      <categories>
+        <category>测试工具</category>
+      </categories>
+      <tags>
+        <tag>jmeter</tag>
+      </tags>
+  </entry>
+</search>
